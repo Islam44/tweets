@@ -10,7 +10,7 @@ class TweetController extends Controller
 {
     public function index()
     {
-        return view('tweets.index')->with('tweets', Tweet::paginate(5));
+        return view('tweets.index')->with('tweets', Tweet::paginate(3));
     }
 
     public function create()
@@ -22,7 +22,8 @@ class TweetController extends Controller
     {
         Tweet::create([
             'title' => $request->title,
-            'description' =>$request->description
+            'description' =>$request->description,
+             'user_id' => $request->user()->id
         ]);
         return redirect()->route('tweets.index');
     }

@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('tweets', 'TweetController');
+Route::resource('tweets', 'TweetController')->middleware('auth');
 //Route::get('tweets', 'TweetController@index')->name('tweets.index');
 //Route::get('tweets/create', 'TweetController@create')->name('tweets.create');
 //Route::post('tweets', 'TweetController@store')->name('tweets.store');
@@ -22,12 +22,5 @@ Route::resource('tweets', 'TweetController');
 //Route::get('tweets/{$tweet}/edit', 'TweetController@edit')->name('tweets.edit');
 //Route::post('tweets/{$tweet}', 'TweetController@update')->name('tweets.update');
 //Route::post('tweets/{$tweet}', 'TweetController@destroy')->name('tweets.destroy');
-
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

@@ -18,7 +18,15 @@
             <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
+            @if ($errors->any())
+                <div class="alert alert-danger m-2">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </div>
-
     </form>
 @endsection

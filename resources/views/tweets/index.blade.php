@@ -8,6 +8,8 @@
                 <tr>
                     <th>Id</th>
                     <th>Title</th>
+                    <th>Slug</th>
+                    <th>Created By</th>
                     <th>Description</th>
                     <th>Created at</th>
                     <td colspan="3">Action</td>
@@ -18,6 +20,8 @@
                     <tr>
                         <td>{{ $tweet->id }}</td>
                         <td>{{ $tweet->title }}</td>
+                        <td>{{ $tweet->slug }}</td>
+                        <td>{{ $tweet->user['name'] }}</td>
                         <td>{{ $tweet->description }}</td>
                         <td>{{ date('Y-m-d', strtotime($tweet->created_at)) }}</td>
                         <td><a href="{{ route('tweets.show',$tweet->id)}}" class="btn btn-primary">View</a></td>
