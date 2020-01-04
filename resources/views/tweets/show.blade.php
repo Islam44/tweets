@@ -1,4 +1,4 @@
-@extends('tweets.app')
+@extends('layouts.app')
 @section('content')
     <div class="container m-5">
         <h1>Post Info :</h1>

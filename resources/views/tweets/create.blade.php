@@ -1,4 +1,4 @@
-@extends('tweets.app')
+@extends('layouts.app')
 @section('content')
     <form action="{{ route('tweets.store') }}" method="POST" name="add_tweet" class="m-5">
         @csrf

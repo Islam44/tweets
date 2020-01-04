@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTweetRequest;
 use App\Tweet;
 use Illuminate\Http\Request;
 
@@ -17,11 +18,11 @@ class TweetController extends Controller
         return view('tweets.create');
     }
 
-    public function store()
+    public function store(StoreTweetRequest $request)
     {
         Tweet::create([
-            'title' => request()->title,
-            'description' =>request()->description
+            'title' => $request->title,
+            'description' =>$request->description
         ]);
         return redirect()->route('tweets.index');
     }

@@ -1,4 +1,4 @@
-@extends('tweets.app')
+@extends('layouts.app')
 @section('content')
     <br>
     <div class="row">

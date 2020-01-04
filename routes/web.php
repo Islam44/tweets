@@ -23,3 +23,11 @@ Route::resource('tweets', 'TweetController');
 //Route::post('tweets/{$tweet}', 'TweetController@update')->name('tweets.update');
 //Route::post('tweets/{$tweet}', 'TweetController@destroy')->name('tweets.destroy');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

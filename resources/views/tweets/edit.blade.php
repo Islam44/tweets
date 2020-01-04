@@ -1,4 +1,4 @@
-@extends('tweets.app')
+@extends('layouts.app')
 @section('content')
     <form action="{{ route('tweets.update', $tweet->id) }}" method="POST" name="update_tweet" class="m-5">
         @csrf
