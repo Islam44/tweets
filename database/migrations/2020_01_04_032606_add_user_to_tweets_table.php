@@ -27,7 +27,7 @@ class AddUserToTweetsTable extends Migration
     public function down()
     {
         Schema::table('tweets', function (Blueprint $table) {
-            //
+         $table->string("user_id")->nullable();
         });
     }
 }

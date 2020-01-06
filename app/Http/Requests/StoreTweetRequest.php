@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\MoreThreePosts;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreTweetRequest extends FormRequest
@@ -23,9 +24,12 @@ class StoreTweetRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
             'title' => 'required',
-            'description' => 'required|max:255'
+            'description' => 'required|max:255',
+            'image' => 'required|image|mimes:png,jpg|max:2048',
+
         ];
     }
 }

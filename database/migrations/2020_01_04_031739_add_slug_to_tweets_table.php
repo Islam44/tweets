@@ -26,7 +26,7 @@ class AddSlugToTweetsTable extends Migration
     public function down()
     {
         Schema::table('tweets', function (Blueprint $table) {
-            //
+            $table->string('slug');
         });
     }
 }

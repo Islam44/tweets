@@ -24,3 +24,7 @@ Route::resource('tweets', 'TweetController')->middleware('auth');
 //Route::post('tweets/{$tweet}', 'TweetController@destroy')->name('tweets.destroy');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+Route::post('tweets/{tweet}/comment', 'TweetController@comment')->name('tweets.comment');
+Route::get('tweets/{tweet}/ajax', 'TweetController@showAjax');

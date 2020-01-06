@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <form action="{{ route('tweets.update', $tweet->id) }}" method="POST" name="update_tweet" class="m-5">
+    <form action="{{ route('tweets.update', $tweet->id) }}" method="POST" name="update_tweet" class="m-5" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <div class="row">
@@ -17,8 +17,18 @@
                 </div>
             </div>
             <div class="col-md-12">
+                <div class="form-group">
+                    <strong>Image</strong>
+                    <img id="img" style="width: 100px" class="img-fluid" src="{{env('APP_URL').'/'.$tweet->image}}">
+                    <input id="imgInput" type="file" name="image" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
     </form>
+    <script>
+        document.getElementById("img").setAttribute("src",document.getElementById("imgInput").value);
+    </script>
 @endsection

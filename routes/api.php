@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('tweets', 'api\TweetController@index')->middleware('auth:api');
+Route::get('tweets/{tweet}','api\TweetController@show')->middleware('auth:api');
+Route::post('tweets', 'api\TweetController@store')->middleware('auth:api');
+
